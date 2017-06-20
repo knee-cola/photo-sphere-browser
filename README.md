@@ -5,9 +5,12 @@ This is a photo sphere browser and viewer. It scans a local folder for photo-sph
 
 The browser/viewer supports:
 * browsing folder structure
-* access a folder or file directly by typing/pasting it's URL into browser adress box
-* back/forward navigation - use back & forward button to navigate back to previously viewed folder or file
-* sphere viewer
+* sphere viewer (via https://github.com/knee-cola/SphereViewer)
+* multiple navigation options
+	* via clicking on the folder & file icons
+	* via clicking on path links at the top of the page
+	* via editing URL in browser's address bar
+	* via clicking back & forward browser button (full browsing history is supported)
 
 The following image show what the browser looks like:
 ![File & folder browser](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-icons.png)
