@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-const baseUrl = '/photo-sphere-gallery/dist/'
+const baseUrl = '/photo-sphere-browser/dist/'
 
 export default class NavBar extends React.Component {
 	render() {

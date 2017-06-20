@@ -2,7 +2,7 @@ import React from 'react';
 import FileIcon from './FileIcon';
 import Request from 'superagent';
 
-const baseUrl = '/photo-sphere-gallery/dist/'
+const baseUrl = '/photo-sphere-browser/dist/'
 
 export default class FileList extends React.Component {
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Viewer } from 'sphere-viewer';
 
-const baseUrl = '/photo-sphere-gallery/dist/';
+const baseUrl = '/photo-sphere-browser/dist/';
 
 var logo_png = require('../img/logo.png'),
 	icon_mobile_png = require('../img/sphere-icon-mobile.png'),
