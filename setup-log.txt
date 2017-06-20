@@ -1,0 +1,50 @@
+# Setup procedure
+The setup procedure is based on YT Video [https://www.youtube.com/watch?v=zhA5LNA3MxE&t=194s](Webpack 2 - How to install React and Babel)
+# Installing React
+	npm install --save-dev react react-dom
+
+# Install Babel
+	npm install --save-dev babel
+	npm install --save-dev babel-preset-react
+	npm install --save-dev babel-preset-es2015
+
+## Configure Babel
+
+Create new file ".babelrc"
+	{
+		"presets": ["es2015", "react"]
+	}
+
+# Install Babel Loader
+	npm install --save-dev babel-loader babel-core
+
+## Configure webpack to use B
+Add a new rule for JS files:
+
+	{
+		test: /\.js$/,
+		exclude: /node_modules/, // skip the Node modules loader
+		use: 'babel-loader'
+	}
+
+# Log
+**17.05.2017.**
+* webpack configured to buld react
+* page fully functional
+
+	PROPERTIES
+	this.props.<key>  = pristupam read-only property-ima pridruženima u HTML/XML-u
+	this.state.<key>  = pristupam vrijednostima koje se mogu mijenjati
+
+	METHODS
+	this.setState("<key>", <value>) = mijenjam vrijednost neke varijable spremljene u state
+	[getInitialState] - u ovoj metodi možemo definirati inicijalni state
+
+
+* PLAN
+	* kako kontaktirati web service
+	* kako na ekran dinamički dodavati i sa njega uklanjati komponente
+	* kako integrirati sphere viewer, tako da postane react komponenta (je li to uopće potrebno?)
+
+* ToDo NEXT
+	* smisliti kako srediti problem sa sferama

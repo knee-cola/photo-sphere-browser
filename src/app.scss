@@ -1,0 +1,77 @@
+body {
+	background: #304048;
+
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+* {
+	color: white;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.navBar {
+	display: block;
+	border-bottom: 1px solid white;
+	padding: 10px;
+}
+
+.navBar a.material-icons {
+	vertical-align: -0.20em;
+}
+
+.fileIcon,
+.folderIcon {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	margin: 5px;
+	padding: 35px 5px 5px 5px;
+	min-width: 32px;
+	text-align: center;
+	font-size: 0.9em;
+	cursor: pointer;
+	background: url(img/folder32.png) center 0 no-repeat;
+	border: 1px solid rgba(0,0,0,0);
+}
+
+.fileIcon {
+	background: url(img/folder32.png) center -128px no-repeat;
+}
+
+.fileIcon:hover {
+	background: url(img/folder32.png) center -128px no-repeat, rgba(255,255,255,0.05);
+	border: 1px solid rgba(255,225,225,0.2);
+}
+
+.folderIcon.opened {
+	background: url(img/folder32.png) center -64px no-repeat;
+}
+.folderIcon:hover {	
+	border: 1px solid rgba(255,255,255,0.2);
+}
+.folderIcon.closed:hover {
+	background: url(img/folder32.png) center 0 no-repeat, rgba(255,255,255,0.05);
+}
+.folderIcon.opened:hover {
+	background: url(img/folder32.png) center -64px no-repeat, rgba(255,255,255,0.05);
+}
+
+.msg {
+	margin: 10px;
+}
