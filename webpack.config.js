@@ -16,7 +16,7 @@ module.exports = {
 		// by specifying the [publicPath],
 		// all JS and CSS files are linked
 		// via absolute path (not relative)
-		publicPath: '/photo-sphere-gallery/dist/',
+		publicPath: '/photo-sphere-browser/dist/',
 		filename: '[name].bundle.js' // the [name] will be replaced by the name of entry JavaScript File
 	},
 	module: {
@@ -46,7 +46,7 @@ module.exports = {
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
 				use: [
-					'file-loader?outputPath=img/&publicPath=./&hash=sha512&digest=hex&name=[name].[ext]?[hash]',
+					'file-loader?outputPath=img/&publicPath=/photo-sphere-browser/dist/&hash=sha512&digest=hex&name=[name].[ext]?[hash]',
 					// ne želim da mi image loader radi bilo kakvu optimizaciju slika
 					// > sve je već unaprijed optimizirano
 					// 'image-webpack-loader?bypassOnDebug' // &optimizationLevel=7&interlaced=false

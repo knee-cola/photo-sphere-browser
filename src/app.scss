@@ -27,12 +27,22 @@ a:hover {
 
 .navBar {
 	display: block;
+	// prikazujem uz gorni rub ekrana
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #304048;
 	border-bottom: 1px solid white;
 	padding: 10px;
 }
 
 .navBar a.material-icons {
 	vertical-align: -0.20em;
+}
+
+.fileList {
+	margin-top: 50px; // navbar je pozicioniran apsolutni, a ne želim da se popis ikona nađe ispod njega
 }
 
 .fileIcon,

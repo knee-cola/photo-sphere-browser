@@ -2,6 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Viewer } from 'sphere-viewer';
 
+const baseUrl = '/photo-sphere-gallery/dist/';
+
+var logo_png = require('../img/logo.png'),
+	icon_mobile_png = require('../img/sphere-icon-mobile.png'),
+	icon_desktop_png = require('../img/sphere-icon-desktop.png');
+
 export default class SphereViewer extends React.Component {
 
 	constructor(props, context) {
@@ -11,9 +17,6 @@ export default class SphereViewer extends React.Component {
 	// render method should return HTML
 	render() {
 
-		  var imageUrls,
-		    baseUrl = 'https://rawgit.com/knee-cola/SphereViewer/master/examples/img/';
-
 		  var isMobile = window.devicePixelRatio!==1;
 
 		  var config = {
@@ -22,7 +25,7 @@ export default class SphereViewer extends React.Component {
 		    // (unless the [forceCube] flag is set - see below).
 		    // Here we can use the pre-loader feature by specifying
 		    // an array of images - see above how [imageUrls] is defined
-		    sphere: [this.props.location.pathname],
+		    sphere: [this.props.location.pathname.replace(baseUrl, baseUrl+'images/')],
 		    // If the [forceCube] flag is set to TRUE, the texture will be
 		    // applied onto a 3D Cube instead of a 3D Sphere.
 		    //
@@ -36,11 +39,11 @@ export default class SphereViewer extends React.Component {
 
 		    // (optional) setting up a logo, which will be displayed at the bottom 
 		    // of the sphere, which is usefull for hiding the triopod 
-		    logo:baseUrl+'logo.png',
+		    logo:logo_png,
 		    logoDistance: -30,
 		    // (optional) defining hint, which will be displayed in the center 
 		    // of the screen and is hidden after the user clicks/taps the screen 
-		    hint: isMobile ? baseUrl+'sphere-icon-mobile.png' : baseUrl+'sphere-icon-desktop.png',
+		    hint: isMobile ? icon_mobile_png : icon_desktop_png,
 
 		    // (optional) overriding the default control config 
 		    control: {
@@ -51,7 +54,7 @@ export default class SphereViewer extends React.Component {
 //		    closeButtonHtml: '<i class="cmdCloseSphere material-icons">highlight_off</i>'
 		  };
 
-		  var sphere = new Viewer(config);
+		  this.viewer = new Viewer(config);
 
 //		  sphere.addEventListener('closed', function() {
 //		    // after the sphere is closed, display a button for showing the sphere
@@ -63,6 +66,11 @@ export default class SphereViewer extends React.Component {
 //		    document.getElementsByTagName('body')[0].appendChild(cmdShowSphere);   
 //
 //		  });
-		return(<div>Ovo je sphere viewer!!!</div>);
-	}
+		return(<div></div>);
+	} // render() {...}
+
+	componentWillUnmount () {
+		this.viewer.dispose();
+		this.viewer = null;
+	} // componentWillUnmount () {...}
 };
