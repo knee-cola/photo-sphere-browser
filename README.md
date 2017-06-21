@@ -1,7 +1,7 @@
 # Photo Sphere Browser
 
 # Intro
-This is a photo sphere browser and viewer. It scans a local folder for photo-sphere files and diplays them in a icon grid similar to Windows Explorer.
+This is a photo sphere browser and viewer. It scans a folder located on a web server for photo-sphere files and diplays them in a icon grid similar to Windows Explorer.
 
 The browser/viewer supports:
 * browsing folder structure
@@ -48,6 +48,11 @@ The web service script expects to find photo-sphere images inside the "images" f
 The "images" folder can contain other sub-folders, which means that files can be organized as wished.
 
 The name of this folder is hardcoded, meaning that it can't be changed without editing the source.
+
+
+## Dependencies
+* ![React](https://github.com/facebook/react)
+* ![Sphere viewer](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-viewer.png) & it's dependencies
 
 # Building for production
 The project is built with webpack, which means that the build process is configured inside the **webpack.config** file.

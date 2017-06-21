@@ -1,14 +1,29 @@
 {
   "name": "photo-sphere-gallery",
   "version": "1.0.0",
-  "description": "a simple photo sphere gallery with a file browser UI",
-  "main": "index.js",
+  "description": "A simple photo sphere gallery web app, with a file browser UI",
+  "author": "Nikola Derežić <nikola.derezic@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knee-cola/photo-sphere-browser/issues"
+  },
+  "homepage": "https://github.com/knee-cola/photo-sphere-browser#readme",
+  "main": "dist/index.html",
+  "directories": {
+    "dist": "dist"
+  },
   "scripts": {
     "dev": "webpack -d",
     "prod": "webpack -p"
   },
   "author": "knee-cola",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knee-cola/photo-sphere-browser.git"
+  },
+  "keywords": [
+    "photosphere", "gallery", "photo-sphere"
+  ],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
