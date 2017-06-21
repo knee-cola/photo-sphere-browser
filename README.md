@@ -41,7 +41,7 @@ The folowing block contains an example of data returned by the script:
 ## URL Rewrite
 The user can access a folder or sphere by entering pathname in the browsers address input box.
 For this to be possible, the website should have a URL rewrite feature be enabled.
-Since this solution is written for IIS, this functionality is implemented in **web.config** file
+Since this solution is written for IIS, this functionality is implemented in ``web.config`` file
 
 ## Photo sphere images location
 The web service script expects to find photo-sphere images inside the "images" folder.
@@ -51,11 +51,11 @@ The name of this folder is hardcoded, meaning that it can't be changed without e
 
 
 ## Dependencies
-* ![React](https://github.com/facebook/react)
-* ![Sphere viewer](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-viewer.png) & it's dependencies
+* [React](https://github.com/facebook/react)
+* [Sphere viewer](https://github.com/knee-cola/SphereViewer) & it's dependencies
 
 # Building for production
-The project is built with webpack, which means that the build process is configured inside the **webpack.config** file.
+The project is built with webpack, which means that the build process is configured inside the ``webpack.config`` file.
 
 To build for production simply run the following command:
 
@@ -65,4 +65,5 @@ Tu build for development run the follwoing command:
 
 	webpack -d
 
-In production environment the project is expected to be placed in the website **root folder**, while in development environemnt it is placed inside a **project folder**. This can be changed by editing the **webpack.config** file.
+In production environment the project is expected to be placed in the website **root folder**, while in development environemnt it is placed inside a **project folder**, under the dev website's root folder. The default name of the project folder is ``photo-sphere-browser``.
+This can be changed by editing the ``webpack.config`` file.
