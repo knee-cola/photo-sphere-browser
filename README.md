@@ -22,7 +22,7 @@ The following image show what the sphere viewer looks like:
 The client-side code of this solution is written in React (JavaScript), while the server-side code (web service) is written in C#.
 This solution is intended to run on IIS, although it can easly be ported to another web server.
 
-## Web service
+### Web service
 This client-side app gets it's data from a server-side script (web service), which returns a list of files and folders contained within a specified path.
 
 The server-side script returns JSON, which contains the following information:
@@ -38,23 +38,23 @@ The folowing block contains an example of data returned by the script:
 		{"name":"tuneli.jpg","type":"file","date":"13.6.2017. 16:49:48"}
 	]
 
-## URL Rewrite
+### URL Rewrite
 The user can access a folder or a photo-sphere **directly** by entering pathname in the browsers address input box.
 
 For this to work, the website/server should have a URL rewrite feature enabled.
 Since this solution is written for IIS, this functionality is implemented in ``web.config`` file
 
-## Photo sphere images location
+### Photo sphere images location
 The web service script expects to find photo-sphere images inside the "images" folder.
 The "images" folder can contain other sub-folders, which means that files can be organized as wished.
 
 The name of this folder is hardcoded, meaning that it can't be changed without editing the source.
 
-## Dependencies
+### Dependencies
 * [React](https://github.com/facebook/react)
 * [Sphere viewer](https://github.com/knee-cola/SphereViewer) & it's dependencies
 
-## Installation
+# Installation
 You can install this app on your development computer by:
 * cloning or download it [from Github](https://github.com/knee-cola/photo-sphere-browser)
 * via NPM (here's a [link](https://www.npmjs.com/package/photo-sphere-gallery))
@@ -74,7 +74,7 @@ Let's assume you've decided to put this app in ``happy-small-kittens`` folder un
 
 Now you should be able to access the app via the following URL ``http://localhost/happy-small-kittens/dist/``
 
-## Adding photo-sphere images
+### Adding photo-sphere images
 The next logical step is to add photos-sphere images you would like to access via this app.
 Here's what you need to do:
 1. under the ``dist`` folder create a new sub-folder and name it ``images`` (important)
