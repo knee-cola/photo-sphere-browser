@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-const baseUrl = '/photo-sphere-browser/dist/'
-
 export default class NavBar extends React.Component {
 	render() {
+		
+		var baseUrl = BASE_URL; // [BASE_URL] is defined by webpack.DefinePlugin
+
 		let pathname = this.props.location.pathname.replace(baseUrl,'').split('/').filter(el=>el!==''),
-			accumulator = '';
+			accumulator = '',
+			lastPathEl = pathname.pop();
 
 		return(
 			<p className="navBar">
@@ -18,6 +20,7 @@ export default class NavBar extends React.Component {
 						return(<span key={accumulator+'span'}> / <Link to={baseUrl+accumulator}> {el}</Link></span>);
 					})
 				}
+				<span key={accumulator+lastPathEl+'/span'}> / {lastPathEl}</span>
 			</p>);
 	}
 };

@@ -1,6 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
 const path = require('path');
+
+// during the development phase the App is located inside the "dist" folde runder project folder
+// while in production env it's placed in root folder
+const projectPath = '/photo-sphere-browser/';
+const publicPath = process.argv.indexOf('-p') !== -1 ? '/' : projectPath+'dist/';
 
 module.exports = {
 	// Defining JavaScript files, which act as entry points to application
@@ -16,7 +22,7 @@ module.exports = {
 		// by specifying the [publicPath],
 		// all JS and CSS files are linked
 		// via absolute path (not relative)
-		publicPath: '/photo-sphere-browser/dist/',
+		publicPath: publicPath,
 		filename: '[name].bundle.js' // the [name] will be replaced by the name of entry JavaScript File
 	},
 	module: {
@@ -46,7 +52,7 @@ module.exports = {
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
 				use: [
-					'file-loader?outputPath=img/&publicPath=/photo-sphere-browser/dist/&hash=sha512&digest=hex&name=[name].[ext]?[hash]',
+					'file-loader?outputPath=img/&publicPath='+publicPath+'&hash=sha512&digest=hex&name=[name].[ext]?[hash]',
 					// ne želim da mi image loader radi bilo kakvu optimizaciju slika
 					// > sve je već unaprijed optimizirano
 					// 'image-webpack-loader?bypassOnDebug' // &optimizationLevel=7&interlaced=false
@@ -85,6 +91,9 @@ module.exports = {
 			filename:"app.css", // here we configure how the resulting CSS file will be named
 			disable: false,
 			allChunks: true
+		}),
+		new webpack.DefinePlugin({
+			'BASE_URL': JSON.stringify(publicPath)
 		})
 	]
 }

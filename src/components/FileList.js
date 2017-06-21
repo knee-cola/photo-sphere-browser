@@ -2,8 +2,6 @@ import React from 'react';
 import FileIcon from './FileIcon';
 import Request from 'superagent';
 
-const baseUrl = '/photo-sphere-browser/dist/'
-
 export default class FileList extends React.Component {
 
 	constructor(props, context) {
@@ -17,7 +15,6 @@ export default class FileList extends React.Component {
 
 	// this method is called automatically before a component will be rendered
 	componentWillMount() {
-		console.log('componentWillMount');
 		// calling a method, which fetches data from the server
 		this.getPathInfo();
 	}
@@ -31,18 +28,17 @@ export default class FileList extends React.Component {
 
 	shouldComponentUpdate(nextProps, nextState) {
 		// if the path is unchenged, don't do a thing
-		var path = nextProps.location.pathname.replace(baseUrl, '');
+		var path = nextProps.location.pathname.replace(BASE_URL, '');
 		return(path!==this.state.path);
 	}
 
 	componentDidUpdate() {
-		console.log('componentDidUpdate');
 		this.getPathInfo();
 	}
 
 	getPathInfo() {
-		var path = this.props.location.pathname.replace(baseUrl, ''),
-			url = `${baseUrl}service.ashx?path=/${path}`;
+		var path = this.props.location.pathname.replace(BASE_URL, ''),
+			url = `${BASE_URL}service.ashx?path=/${path}`;
 		
 		// the [then] handler is defined as an arrow function =>
 		// so that it's context is automatically bound to

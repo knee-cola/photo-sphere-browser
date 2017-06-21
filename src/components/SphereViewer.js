@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Viewer } from 'sphere-viewer';
 
-const baseUrl = '/photo-sphere-browser/dist/';
-
-var logo_png = require('../img/logo.png'),
-	icon_mobile_png = require('../img/sphere-icon-mobile.png'),
-	icon_desktop_png = require('../img/sphere-icon-desktop.png');
+var logo_png = require('../assets/logo.png'),
+	icon_mobile_png = require('../assets/sphere-icon-mobile.png'),
+	icon_desktop_png = require('../assets/sphere-icon-desktop.png');
 
 export default class SphereViewer extends React.Component {
 
@@ -17,6 +15,7 @@ export default class SphereViewer extends React.Component {
 	// render method should return HTML
 	render() {
 
+		  var baseUrl = BASE_URL; // [BASE_URL] is defined by webpack.DefinePlugin
 		  var isMobile = window.devicePixelRatio!==1;
 
 		  var config = {
