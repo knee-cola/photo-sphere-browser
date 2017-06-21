@@ -50,7 +50,7 @@ The "images" folder can contain other sub-folders, which means that files can be
 The name of this folder is hardcoded, meaning that it can't be changed without editing the source.
 
 # Building for production
-The project is built with webpack, which means that the build process is configured inside the webpack.config file.
+The project is built with webpack, which means that the build process is configured inside the **webpack.config** file.
 
 To build for production simply run the following command:
 
@@ -60,4 +60,4 @@ Tu build for development run the follwoing command:
 
 	webpack -d
 
-In production environment the project is expected to be placed in the website **root folder**, while in development environemnt it is placed inside a **project folder**. This can be changed by editing the webpack.config file.
+In production environment the project is expected to be placed in the website **root folder**, while in development environemnt it is placed inside a **project folder**. This can be changed by editing the **webpack.config** file.
