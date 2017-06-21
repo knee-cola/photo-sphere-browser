@@ -39,8 +39,9 @@ The folowing block contains an example of data returned by the script:
 	]
 
 ## URL Rewrite
-The user can access a folder or sphere by entering pathname in the browsers address input box.
-For this to be possible, the website should have a URL rewrite feature be enabled.
+The user can access a folder or a photo-sphere **directly** by entering pathname in the browsers address input box.
+
+For this to work, the website/server should have a URL rewrite feature enabled.
 Since this solution is written for IIS, this functionality is implemented in ``web.config`` file
 
 ## Photo sphere images location
