@@ -4,7 +4,6 @@
   "description": "a simple photo sphere gallery with a file browser UI",
   "main": "index.js",
   "scripts": {
-    "dev-srv": "webpack-dev-server",
     "dev": "webpack -d",
     "prod": "webpack -p"
   },

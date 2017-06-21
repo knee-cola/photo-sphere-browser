@@ -68,15 +68,6 @@ module.exports = {
 			}
 		]
 	},
-	// Dev-Server options can be found at:
-	// https://webpack.js.org/configuration/dev-server/
-	devServer: {
-		contentBase: path.join(__dirname, "dist"),
-		compress: true,
-		port: 9000,
-		stats: 'errors-only',
-		open: true // will automatically open browser window at startup
-	},
 	plugins: [
 		// Generates index.html based on the given template
 		new HtmlWebpackPlugin({
