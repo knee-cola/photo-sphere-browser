@@ -19,6 +19,13 @@ public class Handler : IHttpHandler {
 
 		string path = context.Request.QueryString["path"];
 
+		// this is a security check - preventing visitor to browse
+		// folders outside the "images" folder
+		if(path.Contains("..")) {
+			context.Response.Write("[]");
+			return;
+		}
+
 		String scriptPath = context.Server.MapPath(".");
 		DirectoryInfo di = new DirectoryInfo(scriptPath+"\\images\\"+path);
 
