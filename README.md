@@ -1,8 +1,5 @@
 # Photo Sphere Browser
 
-# DISCLAIMER
-The current status of this project is WORK IN PROGRESS, meaning that is't not production ready!
-
 # Intro
 This is a photo sphere browser and viewer. It scans a local folder for photo-sphere files and diplays them in a icon grid similar to Windows Explorer.
 
