@@ -56,30 +56,30 @@ a:hover {
 	text-align: center;
 	font-size: 0.9em;
 	cursor: pointer;
-	background: url(img/folder32.png) center 0 no-repeat;
+	background: url(assets/folder32.png) center 0 no-repeat;
 	border: 1px solid rgba(0,0,0,0);
 }
 
 .fileIcon {
-	background: url(img/folder32.png) center -128px no-repeat;
+	background: url(assets/folder32.png) center -128px no-repeat;
 }
 
 .fileIcon:hover {
-	background: url(img/folder32.png) center -128px no-repeat, rgba(255,255,255,0.05);
+	background: url(assets/folder32.png) center -128px no-repeat, rgba(255,255,255,0.05);
 	border: 1px solid rgba(255,225,225,0.2);
 }
 
 .folderIcon.opened {
-	background: url(img/folder32.png) center -64px no-repeat;
+	background: url(assets/folder32.png) center -64px no-repeat;
 }
 .folderIcon:hover {	
 	border: 1px solid rgba(255,255,255,0.2);
 }
 .folderIcon.closed:hover {
-	background: url(img/folder32.png) center 0 no-repeat, rgba(255,255,255,0.05);
+	background: url(assets/folder32.png) center 0 no-repeat, rgba(255,255,255,0.05);
 }
 .folderIcon.opened:hover {
-	background: url(img/folder32.png) center -64px no-repeat, rgba(255,255,255,0.05);
+	background: url(assets/folder32.png) center -64px no-repeat, rgba(255,255,255,0.05);
 }
 
 .msg {
