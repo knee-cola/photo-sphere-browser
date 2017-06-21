@@ -13,6 +13,7 @@ import SphereViewer from './components/SphereViewer';
 import { Router, Route, Switch } from 'react-router';
 import { createBrowserHistory } from 'history'
 
+// this will enable forward & back buttons
 const browserHistory = createBrowserHistory();
 
 ReactDOM.render(
