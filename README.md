@@ -41,8 +41,8 @@ Now you should be able to access the app via the following URL ``http://localhos
 ### Adding photo-sphere images
 The next logical step is to add photos-sphere images you would like to access via this app.
 Here's what you need to do:
-2. place your photo-spheres inside the ``images`` folder
-3. you can organize the image files by creating subfolders inside the ``images`` folder
+1. place your photo-spheres inside the ``images`` folder
+2. you can organize the image files by creating subfolders inside the ``images`` folder
 	* sub-folders can be nested ... you can create a folder structure which best fits your needs
 
 ### Installing on production server
