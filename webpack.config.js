@@ -3,10 +3,25 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
 
-// during the development phase the App is located inside the "dist" folde runder project folder
-// while in production env it's placed in root folder
-const projectPath = '/photo-sphere-browser/';
-const publicPath = process.argv.indexOf('-p') !== -1 ? '/' : projectPath+'dist/';
+// The [devPath] is the location in your dev server in which
+// you have installed the app.
+// The default location is "http://localhost/photo-sphere-browser/"
+// If you used a different name for the project folder, you need
+// to update this string.
+const devPath = '/photo-sphere-browser/';
+
+// [prodPath] is path to the folder in which the app is located
+// on a production werb server. By default the app is expected to be placed
+// in the website root. In case the app is not placed in website root,
+// here you can override the default value...
+const prodPath = '/';
+
+// the development build is placed in "dev" folder, while
+// the production build is placed inside the "dist" folder
+const buildFolder = process.argv.indexOf('-p') !== -1 ? 'dist/' : 'dev/';
+
+// don't change the following line
+const appRootPath = process.argv.indexOf('-p') !== -1 ? prodPath : devPath+buildFolder;
 
 module.exports = {
 	// Defining JavaScript files, which act as entry points to application
@@ -18,11 +33,11 @@ module.exports = {
 	},
 	output: {
 		// here we need to set an absolute path - we're resolve path at runtime
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, buildFolder),
 		// by specifying the [publicPath],
 		// all JS and CSS files are linked
 		// via absolute path (not relative)
-		publicPath: publicPath,
+		publicPath: appRootPath,
 		filename: '[name].bundle.js' // the [name] will be replaced by the name of entry JavaScript File
 	},
 	module: {
@@ -52,18 +67,15 @@ module.exports = {
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
 				use: [
-					'file-loader?outputPath=img/&publicPath='+publicPath+'&hash=sha512&digest=hex&name=[name].[ext]?[hash]',
-					// ne želim da mi image loader radi bilo kakvu optimizaciju slika
-					// > sve je već unaprijed optimizirano
-					// 'image-webpack-loader?bypassOnDebug' // &optimizationLevel=7&interlaced=false
+					`file-loader?outputPath=img/&publicPath=${appRootPath}&hash=sha512&digest=hex&name=[name].[ext]?[hash]`
 				]
 			},
 			{
 				// the following line makes webpack copy varius files required from app.js
 				// into the output folder
-				test: /\.(ashx|config)$/i,
+				test: /\.(ashx|config|txt)$/i,
 				use: [
-					'file-loader?name=[name].[ext]?[hash]'
+					'file-loader?name=[name].[ext]?[hash]&publicPath=${appRootPath}&useRelativePath=true'
 				]
 			}
 		]
@@ -84,7 +96,7 @@ module.exports = {
 			allChunks: true
 		}),
 		new webpack.DefinePlugin({
-			'BASE_URL': JSON.stringify(publicPath)
+			'BASE_URL': JSON.stringify(appRootPath)
 		})
 	]
 }

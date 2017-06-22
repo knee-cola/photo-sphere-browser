@@ -10,11 +10,11 @@ public class Handler : IHttpHandler {
 	
 	public void ProcessRequest (HttpContext context) {
 
-        // vrati mime-type
+        // return the mime-type
         context.Response.Charset="utf-8";
-        // odmah zastarjeva
+        // expires immediately
         context.Response.Expires = 0;
-        // ne keširaj ništa
+        // do not cache
         context.Response.CacheControl = "no-cache";
 
 		string path = context.Request.QueryString["path"];

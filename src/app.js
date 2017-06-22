@@ -3,6 +3,7 @@
 require('./app.scss');
 require('./service.ashx');
 require('./web.config');
+require('./images/readme.txt');
 
 import React from 'react';
 import ReactDOM from 'react-dom';

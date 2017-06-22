@@ -30,21 +30,20 @@ To install it via NPM do the following:
 2. open up a console and go to the selected folder
 3. run ``npm -i --save-dev photo-sphere-browser``
 
-Let's assume you've decided to put this app in ``happy-small-kittens`` folder under the website root. Since the folder name differs from the default one, you need to make sa simple tweek:
+Let's assume you've decided to put this app in ``happy-small-kittens`` folder under the website root. Since the folder name differs from the default one (``photo-sphere-viewer``), you need to make one simple tweek:
 1. open the webpack.config file in your favorite editor
-2. find the ``projectPath`` variable and changed the assigned value to ``happy-small-kittens``
+2. find the ``devPath`` variable and changed it's value to ``/happy-small-kittens/``
 3. save & close the ``webpack.config file``
 4. rebuld the app by running ``webpack -d``
 
-Now you should be able to access the app via the following URL ``http://localhost/happy-small-kittens/dist/``
+Now you should be able to access the app via the following URL ``http://localhost/happy-small-kittens/dev/`` (provided that the web server is running on the same machine as the web browser)
 
 ### Adding photo-sphere images
 The next logical step is to add photos-sphere images you would like to access via this app.
 Here's what you need to do:
-1. under the ``dist`` folder create a new sub-folder and name it ``images`` (important)
-2. place your photo-spheres inside this new folder
+2. place your photo-spheres inside the ``images`` folder
 3. you can organize the image files by creating subfolders inside the ``images`` folder
-	* sub-folders can be nested ... do whatever you want
+	* sub-folders can be nested ... you can create a folder structure which best fits your needs
 
 ### Installing on production server
 To use this web app in the production environment, you need to do the following:
@@ -52,9 +51,9 @@ To use this web app in the production environment, you need to do the following:
 2. copy contents of the ``dist`` folder to the root of your public wesbite
 
 ### Customizing default folders
-In production environment the project is expected to be placed in the website **root folder**, while in development environemnt it is placed inside a **project folder**, located under the dev website's root folder.
+In production environment the project is expected to be placed in the website **root folder**, while in development environemnt it is placed inside a **project folder**, located under the dev website's root folder. The default name of the project folder is ``photo-sphere-browser``.
 
-The default name of the project folder is ``photo-sphere-browser``. This can be changed by editing the ``webpack.config`` file.
+This default behaviour can be changed by editing the ``webpack.config`` file and modifying the ``devPath`` and ``prodPath`` variables.
 
 # Technical details
 The client-side code of this solution is written in React (JavaScript), while the server-side code (web service) is written in C#.
