@@ -54,7 +54,7 @@ The name of this folder is hardcoded, meaning that it can't be changed without e
 * [React](https://github.com/facebook/react)
 * [Sphere viewer](https://github.com/knee-cola/SphereViewer) & it's dependencies
 
-# Installation
+# Installation Guide
 You can install this app on your development computer by:
 * cloning or download it [from Github](https://github.com/knee-cola/photo-sphere-browser)
 * via NPM (here's a [link](https://www.npmjs.com/package/photo-sphere-gallery))
