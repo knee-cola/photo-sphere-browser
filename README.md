@@ -19,24 +19,16 @@ The following image show what the sphere viewer looks like:
 ![Sphere viewer](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-viewer.png)
 
 # Installation Guide
-You can install this app on your development computer by:
-* cloning or download it [from Github](https://github.com/knee-cola/photo-sphere-browser)
-* via NPM (here's a [link](https://www.npmjs.com/package/photo-sphere-gallery))
+You can install this app on your development computer by cloning or download it [from Github](https://github.com/knee-cola/photo-sphere-browser)
 
 **Note:** it is important that your computer runs IIS with ASP.Net enabled (the web service is written in C#).
-
-To install it via NPM do the following:
-1. decide in which folder of your website you would like to place this app (the default folder name is ``photo-sphere-viewer``)
-2. open up a console and go to the selected folder
-3. run ``npm -i --save-dev photo-sphere-browser``
 
 Let's assume you've decided to put this app in ``happy-small-kittens`` folder under the website root. Since the folder name differs from the default one (``photo-sphere-viewer``), you need to make one simple tweek:
 1. open the webpack.config file in your favorite editor
 2. find the ``devPath`` variable and changed it's value to ``/happy-small-kittens/``
 3. save & close the ``webpack.config file``
-4. rebuld the app by running ``webpack -d``
 
-Now you should be able to access the app via the following URL ``http://localhost/happy-small-kittens/dev/`` (provided that the web server is running on the same machine as the web browser)
+At this point all you need to do is build the app by running ``webpack -d``. This command will create ``dev`` folder and will place all the necessary files inside it. Now you should be able to access the app via the following URL ``http://localhost/happy-small-kittens/dev/`` (provided that the web server is running on the same machine as the web browser)
 
 ### Adding photo-sphere images
 The next logical step is to add photos-sphere images you would like to access via this app.
