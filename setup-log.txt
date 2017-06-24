@@ -47,4 +47,28 @@ Add a new rule for JS files:
 	* kako integrirati sphere viewer, tako da postane react komponenta (je li to uopće potrebno?)
 
 * ToDo NEXT
-	* smisliti kako srediti problem sa sferama
+
+	#10 Accessing Dispatch and State with Redux
+		- kako omogućiti da iz komponente možemo pristuptiti
+		(a) podacima iz store-a, kako bi podatke mogli prikazati
+		(b) generatorima akcija, koje ćemo pozivati iz DOM event handlera
+
+	#11 Displaying Redux State inside our Components
+		- prosljeđivanje property-a child komponentama
+		- CSSTransitionGroup - kako raditi animacije iz Redux-a
+
+	#12 Updating State with Reducers
+		- kakoiz reducre-a mijenjati stanje
+
+	#13 Displaying the Single Photo Component
+		- kako pristupiti parametrima iz URL-a
+			> komponenta sama (na temelju parametra iz URL-a u [store]-e
+			  pronalazi element koji treba prikazati)
+
+	#14 Displaying and Adding Comments
+
+		... nastaviti gledati od https://www.youtube.com/watch?v=v0DdCELM-k0&index=15&list=PLu8EoSxDXHP5uyzEWxdlr9WQTJJIzr6jy
+
+
+# Kako riješiti problem dohvata sa servera?
+	- možda iz akcije?

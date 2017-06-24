@@ -7,24 +7,26 @@ require('./images/readme.txt');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+import { Router, Route, Switch } from 'react-router';
+
 import NavBar from './components/NavBar';
 import FileList from './components/FileList';
 import SphereViewer from './components/SphereViewer';
+import store, {history} from './store';
 
-import { Router, Route, Switch } from 'react-router';
-import { createBrowserHistory } from 'history'
-
-// this will enable forward & back buttons
-const browserHistory = createBrowserHistory();
 
 ReactDOM.render(
-	<Router history={browserHistory}>
-		<div>
-			<Route path="/*" component={NavBar} />
-			<Switch>
-				<Route path="/*.jpg" component={SphereViewer} />
-				<Route path="/*" component={FileList} />
-			</Switch>
-		</div>
-	</Router>,
+	<Provider store={store}>
+		<Router history={history}>
+			<div>
+				<Route path="/*" component={NavBar} />
+				<Switch>
+					<Route path="/*.jpg" component={SphereViewer} />
+					<Route path="/*" component={FileList} />
+				</Switch>
+			</div>
+		</Router>
+	</Provider>,
 	document.getElementById('root'));
