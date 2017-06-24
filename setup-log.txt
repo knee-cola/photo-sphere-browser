@@ -68,7 +68,6 @@ Add a new rule for JS files:
 	#14 Displaying and Adding Comments
 
 		... nastaviti gledati od https://www.youtube.com/watch?v=v0DdCELM-k0&index=15&list=PLu8EoSxDXHP5uyzEWxdlr9WQTJJIzr6jy
-		
 
 
 # Kako riješiti problem dohvata sa servera?
