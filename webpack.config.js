@@ -8,20 +8,23 @@ const path = require('path');
 // The default location is "http://localhost/photo-sphere-browser/"
 // If you used a different name for the project folder, you need
 // to update this string.
-const devPath = '/photo-sphere-browser/';
-
-// [prodPath] is path to the folder in which the app is located
-// on a production werb server. By default the app is expected to be placed
-// in the website root. In case the app is not placed in website root,
-// here you can override the default value...
-const prodPath = '/';
+const devPath = '/';
 
 // the development build is placed in "dev" folder, while
 // the production build is placed inside the "dist" folder
 const buildFolder = process.argv.indexOf('-p') !== -1 ? 'dist/' : 'dev/';
 
+
+// [prodPath] is path to the folder in which the app is located
+// on a production werb server. By default the app is expected to be placed
+// in the website root. In case the app is not placed in website root,
+// here you can override the default value...
+// const prodPath = '/'+buildFolder;
+const prodPath = '/';
+
 // don't change the following line
-const appRootPath = process.argv.indexOf('-p') !== -1 ? prodPath : devPath+buildFolder;
+// const appRootPath = process.argv.indexOf('-p') !== -1 ? prodPath : devPath;
+const appRootPath = process.argv.indexOf('-p') !== -1 ? prodPath : devPath;
 
 module.exports = {
 	// Defining JavaScript files, which act as entry points to application
@@ -73,7 +76,7 @@ module.exports = {
 			{
 				// the following line makes webpack copy varius files required from app.js
 				// into the output folder
-				test: /\.(ashx|config|txt)$/i,
+				test: /\.(ashx|php|config|txt)$/i,
 				use: [
 					'file-loader?name=[name].[ext]?[hash]&publicPath=${appRootPath}&useRelativePath=true'
 				]

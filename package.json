@@ -12,6 +12,7 @@
   "directories": {},
   "scripts": {
     "dev": "webpack -d",
+    "dev-w": "webpack -d --watch",
     "prod": "webpack -p"
   },
   "repository": {
