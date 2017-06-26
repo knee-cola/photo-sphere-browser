@@ -13,6 +13,7 @@
   },
   "scripts": {
     "dev": "webpack -d",
+    "dev-w": "webpack -d --watch",
     "prod": "webpack -p"
   },
   "author": "knee-cola",

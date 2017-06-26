@@ -2,6 +2,7 @@
 // for the CSS file be processed by WebPack
 require('./app.scss');
 require('./service.ashx');
+require('./service.php');
 require('./web.config');
 require('./images/readme.txt');
 
