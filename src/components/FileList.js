@@ -38,7 +38,7 @@ export default class FileList extends React.Component {
 
 	getPathInfo() {
 		var path = this.props.location.pathname.replace(BASE_URL, ''),
-			url = `${BASE_URL}service/?path=/${path}`;
+			url = `${BASE_URL}service/${path}`;
 		
 		// the [then] handler is defined as an arrow function =>
 		// so that it's context is automatically bound to

@@ -8,7 +8,7 @@ const path = require('path');
 // The default location is "http://localhost/photo-sphere-browser/"
 // If you used a different name for the project folder, you need
 // to update this string.
-const devPath = '/';
+const devPath = '/photo-sphere-browser/dev/';
 
 // the development build is placed in "dev" folder, while
 // the production build is placed inside the "dist" folder
