@@ -20,25 +20,29 @@ export default class FileList extends React.Component {
 		this.getPathInfo(this.props.location.pathname);
 	}
 
-	// this method is called when the route is changed
-	componentWillReceiveProps() {
+	// this method is called when the route has changed
+	componentWillReceiveProps(props) {
+
 		// reseting the item list ... new will be loaded soon
 		this.setState({
 			items: null
 		});
 
-		this.getPathInfo(location.pathname); // [location] represents the next location (which is not yet stored in [state])
+		// this is a good time to start loading
+		// file list for the new path
+		this.getPathInfo(props.location.pathname); // [location] represents the next location (which is not yet stored in [state])
 	}
 
 	// this is called when something in state changes (including the location)
 	// ... the function will determine if the component needs to be re-drawn
 	shouldComponentUpdate(nextProps, nextState) {
-		// if the path is unchenged, don't do a thing
+		// don't do anything if the path is unchanged
 		var path = nextProps.location.pathname.replace(BASE_URL, '');
 		return(path!==this.state.path);
 	}
 
 	componentDidUpdate() {
+		
 	}
 
 	getPathInfo(path) {
