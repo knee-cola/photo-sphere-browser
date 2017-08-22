@@ -47,24 +47,11 @@ export default class SphereViewer extends React.Component {
 		    // (optional) overriding the default control config 
 		    control: {
 		      autoRotate: true, autoRotateSpeed: 2, autoRotateDirection:-1
-		    },
-
-		    // (optional) defining what the close button should contain
-//		    closeButtonHtml: '<i class="cmdCloseSphere material-icons">highlight_off</i>'
+		    }
 		  };
 
 		  this.viewer = new Viewer(config);
 
-//		  sphere.addEventListener('closed', function() {
-//		    // after the sphere is closed, display a button for showing the sphere
-//		    var cmdShowSphere = document.createElement('button');
-//		    cmdShowSphere.className = 'cmdShowSphere';
-//		    cmdShowSphere.innerHTML = 'Show Sphere';
-//		    cmdShowSphere.addEventListener('click', initSphere)
-//
-//		    document.getElementsByTagName('body')[0].appendChild(cmdShowSphere);   
-//
-//		  });
 		return(<div></div>);
 	} // render() {...}
 

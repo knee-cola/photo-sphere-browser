@@ -14,18 +14,24 @@ export default class FileList extends React.Component {
 	}
 
 	// this method is called automatically before a component will be rendered
+	// but after the current (initial) location has been stored in [state]
 	componentWillMount() {
 		// calling a method, which fetches data from the server
-		this.getPathInfo();
+		this.getPathInfo(this.props.location.pathname);
 	}
 
+	// this method is called when the route is changed
 	componentWillReceiveProps() {
 		// reseting the item list ... new will be loaded soon
 		this.setState({
 			items: null
 		});
+
+		this.getPathInfo(location.pathname); // [location] represents the next location (which is not yet stored in [state])
 	}
 
+	// this is called when something in state changes (including the location)
+	// ... the function will determine if the component needs to be re-drawn
 	shouldComponentUpdate(nextProps, nextState) {
 		// if the path is unchenged, don't do a thing
 		var path = nextProps.location.pathname.replace(BASE_URL, '');
@@ -33,13 +39,17 @@ export default class FileList extends React.Component {
 	}
 
 	componentDidUpdate() {
-		this.getPathInfo();
 	}
 
-	getPathInfo() {
-		var path = this.props.location.pathname.replace(BASE_URL, ''),
+	getPathInfo(path) {
+
+		if(path === void 0) {
+			path = this.props.location.pathname;
+		}
+
+		var path = path.replace(BASE_URL, ''),
 			url = `${BASE_URL}service/${path}`;
-		
+
 		// the [then] handler is defined as an arrow function =>
 		// so that it's context is automatically bound to
 		// component instance
@@ -50,7 +60,6 @@ export default class FileList extends React.Component {
 			if(path!=='') {
 				items.unshift({name:'..',type:'folder',date:'go one level up'});
 			}
-
 
 			this.setState({
 				items: items,
