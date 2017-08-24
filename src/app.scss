@@ -85,3 +85,31 @@ a:hover {
 .msg {
 	margin: 10px;
 }
+
+/* Prev & Next buttons are displayed on top of the sphere viewer */
+.cmdPrevSphere,
+.cmdNextSphere {
+	position: absolute;
+	z-index: 101;
+	color: white;
+	height: 90%;
+	cursor: pointer;
+	text-shadow: 1px 1px 2px black
+}
+
+.cmdNextSphere {
+	right: 0;
+}
+.cmdPrevSphere {
+	left: 0;
+}
+
+.cmdPrevSphere i,
+.cmdNextSphere i {
+	position: absolute;
+	top:50%;
+	font-size: 5em;
+}
+.cmdNextSphere i {
+	right: 0;
+}

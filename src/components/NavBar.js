@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-export default class NavBar extends React.Component {
-	render() {
-		
+const NavBar = ({ pathname }) => {
+
 		var baseUrl = BASE_URL; // [BASE_URL] is defined by webpack.DefinePlugin
 
-		let pathname = this.props.location.pathname.replace(baseUrl,'').split('/').filter(el=>el!==''),
-			accumulator = '',
+		pathname = pathname.replace(baseUrl,'').split('/').filter(el=>el!=='');
+
+		var accumulator = '',
 			lastPathEl = pathname.pop();
 
 		return(
@@ -22,7 +22,6 @@ export default class NavBar extends React.Component {
 				}
 				<span key={accumulator+lastPathEl+'/span'}> / {lastPathEl}</span>
 			</p>);
-	}
-};
+}
 
 export { NavBar }
