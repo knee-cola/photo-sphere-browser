@@ -11,12 +11,13 @@ The browser/viewer supports:
 	* via clicking on path links at the top of the page
 	* via editing URL in browser's address bar
 	* via clicking back & forward browser button (full browsing history is supported)
+	* via prev/next arrows displayed while viewing a photosphere (to go to prev/next sphere)
 
 The following image show what the browser looks like:
 ![File & folder browser](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-icons.png)
 
 The following image show what the sphere viewer looks like:
-![Sphere viewer](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-viewer.png)
+![Sphere viewer](https://rawgit.com/knee-cola/photo-sphere-browser/master/screenshot-viewer.jpg)
 
 # Installation Guide
 You can install this app on your development computer by cloning or download it [from Github](https://github.com/knee-cola/photo-sphere-browser)
@@ -81,4 +82,5 @@ The name of this folder is hardcoded, meaning that it can't be changed without e
 
 ### Dependencies
 * [React](https://github.com/facebook/react)
+* [Redux](https://github.com/reactjs/redux)
 * [Sphere viewer](https://github.com/knee-cola/SphereViewer) & it's dependencies
