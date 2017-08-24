@@ -27,18 +27,23 @@ const fetchFiles = (action) => (dispatch, getState) => {
 		.then(response => response.json())
 		// dispatching an action (and using the json)
 		.then(json=>dispatch(receiveFiles(json)));
-};
+}; // const fetchFiles = (action) => (dispatch, getState) => {...}
 
 const receiveFiles = (payload) => ({
 	type: FETCH_FILES_SUCCESS,
 	payload: payload
 });
 
-
 /*-------------------------------------------------------------------------*//**
  * Activates previous/next of the currently displayed photosphere
  *
- * @param      {number}  direction  which sibling to show (-1=previous; 1=next)
+ * @param       {number}  direction  which sibling to show (-1=previous; 1=next)
+ *
+ * @return      {none}    none - here we dont't return anything ... nothing
+ *                        makes sense
+ *
+ * @description this action id one form a thunk, since int needs to dispatch a
+ *              new action
  */
 const showSiblingSphere = (direction) => (dispatch, getState) => {
 
@@ -46,10 +51,14 @@ const showSiblingSphere = (direction) => (dispatch, getState) => {
 		files = state.get('files');
 
 	if(files.size === 1) {
+	// IF there's only one sphere in the folder
+	// > there are no siblings - quit
 		return;
 	}
 
 	var stipResult = stripFileName(state.get('pathname')),
+		// search for the current sphere file withing the file list ... we need
+		// this to determine which is the previous and which is the next sibling
 		fileIndex = files.findIndex((value, index, iter) => value.get('name') === stipResult.filename);
 
 	if(direction===-1 && fileIndex === 0) {
@@ -66,7 +75,8 @@ const showSiblingSphere = (direction) => (dispatch, getState) => {
 
 	// change path to point to the previous image
 	dispatch( push(BASE_URL+stipResult.folder+files.get(fileIndex+direction).get('name')) );
-};
+
+}; // const showSiblingSphere = (direction) => (dispatch, getState) => {...}
 
 /*-------------------------------------------------------------------------*//**
  * Strips filename form the given filepath
