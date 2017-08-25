@@ -14,7 +14,6 @@ const devPath = '/photo-sphere-browser/dev/';
 // the production build is placed inside the "dist" folder
 const buildFolder = process.argv.indexOf('-p') !== -1 ? 'dist/' : 'dev/';
 
-
 // [prodPath] is path to the folder in which the app is located
 // on a production werb server. By default the app is expected to be placed
 // in the website root. In case the app is not placed in website root,
@@ -32,6 +31,8 @@ module.exports = {
 	// > Values listed here are used in [plugin] section, where we link subpages
 	//   to coresponding entry points - search for [excludeChunks] & [chunks]
 	entry: {
+		// defining "libs" entry point - this is used by [CommonsChunkPlugin] in "plugins" section
+		libs: ["react", "react-dom", "react-router", "immutable", "react-router-dom", "jquery", "redux", "react-redux", "redux-thunk", "three", "sphere-viewer", "react-router-redux", "history", "redux-immutable"],
 		app: './src/app.js'
 	},
 	output: {
@@ -100,6 +101,16 @@ module.exports = {
 		}),
 		new webpack.DefinePlugin({
 			'BASE_URL': JSON.stringify(appRootPath)
+		}),
+		// The following plugin splits the code into a separate file
+		// Here we use it to separate the external libs from
+		// project code, which speeds up the loading time whenever the
+		// project code changes (provided that "libs.js" is cached by client browser)
+		new webpack.optimize.CommonsChunkPlugin({
+			names: ["libs"],
+			filename: "libs.js",
+			// (with more entries, this ensures that no other module goes into the vendor chunk)
+			minChunks: Infinity
 		})
 	]
 }
