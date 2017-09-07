@@ -11,8 +11,8 @@
   "main": "dist/index.html",
   "directories": {},
   "scripts": {
-    "dev": "webpack -d",
-    "dev-w": "webpack -d --watch",
+    "dev": "webpack --debug --devtool source-map --output-pathinfo",
+    "dev-w": "webpack --debug --devtool source-map --output-pathinfo --watch",
     "prod": "webpack -p"
   },
   "repository": {
